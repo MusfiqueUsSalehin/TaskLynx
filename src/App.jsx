@@ -16,6 +16,7 @@ const App = () => {
   const [user , setUser] = useState ('');
   const [loggedInUserData, setLogged] = useState('');
   const { userData } = useContext (AuthContext);
+  const [showSuccess, setshowSuccess] = useState(false)
 
   console.log(loggedInUserData);
   
@@ -33,7 +34,14 @@ const App = () => {
 
   const handleLogin = (email , password) => {
    if (email === "admin@example.com" && password === "123") {
-      setUser ('admin');
+
+      setshowSuccess(true);
+
+      setTimeout (() => {
+         setUser ('admin');
+         setshowSuccess(false);
+      } , 1500);
+
       localStorage.setItem('loggedInUser', JSON.stringify({role: 'admin'}));
      
    }
@@ -41,8 +49,13 @@ const App = () => {
 
       const employee = userData.find((e) => e.email === email && e.password === password)
       if (employee) {
-         setUser ('employee');
-         setLogged (employee);
+
+         setshowSuccess(true);
+         setTimeout (() => {
+            setUser ('employee');
+            setLogged (employee);
+            setshowSuccess(false);
+         } , 1500);
          localStorage.setItem('loggedInUser', JSON.stringify({role: 'employee'}));
       }
 
@@ -56,11 +69,32 @@ const App = () => {
 
 
 
+
+ const SuccessAnimation = () => (
+  <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50">
+    <div className="bg-black rounded-2xl shadow-2xl p-10 w-[350px] text-center animate-scaleCard">
+      
+      {/* Tick Circle */}
+      <div className="w-20 h-20 rounded-full border-4 border-green-600 flex items-center justify-center mx-auto mb-4 animate-scaleTick">
+        <span className="text-green-600 text-5xl font-bold">✓</span>
+      </div>
+
+      <h2 className="text-2xl font-semibold text-white">Login Successful</h2>
+      <p className="text-white mt-1 text-sm">Redirecting...</p>
+
+    </div>
+  </div>
+);
+
+
+
+
  
   return (
 
 
   <>
+      {showSuccess && <SuccessAnimation />}
       {!user ? <Login handleLogin= {handleLogin} /> : ''}
       {user === 'admin' ? <AdminDashboard /> : ''}
       {user === 'employee' ? <EmployeeDashboard data={loggedInUserData}/> : ''} 

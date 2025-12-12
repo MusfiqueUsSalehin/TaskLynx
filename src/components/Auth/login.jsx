@@ -16,9 +16,9 @@ const Login = ({handleLogin}) => {
 
     <div className='flex flex-row'>
 
-        <div className='bg-[#CF0F47] border-r-4 border-[#670D2F] rounded-r-[400px] h-screen w-1/2 flex justify-center items-center shadow-[5px_0px_30px_#ffffff] '>
+        <div className='bg-[#CF0F47] border-r-4 border-[#670D2F] rounded-r-[400px] h-screen w-1/2 flex justify-center items-center shadow-[5px_0px_30px_#EF88AD] '>
 
-            <h1 className='text-[#3A0519] text-6xl font-bold p-20 '>Office Management System</h1>
+            <h1 className='text-[#3A0519] text-6xl font-bold p-20 '>Task<span className='text-white'>Lynx</span> </h1>
 
 
         </div>
