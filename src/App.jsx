@@ -1,4 +1,4 @@
-import React, { useContext,  useState , useEffect } from 'react'
+import React, { useContext,  useState  } from 'react'
 import "tailwindcss";
 
 import Login from './components/Auth/login'
@@ -17,6 +17,7 @@ const App = () => {
   const [loggedInUserData, setLogged] = useState('');
   const { userData } = useContext (AuthContext);
   const [showSuccess, setshowSuccess] = useState(false)
+  
 
   console.log(loggedInUserData);
   
@@ -43,6 +44,8 @@ const App = () => {
       } , 1500);
 
       localStorage.setItem('loggedInUser', JSON.stringify({role: 'admin'}));
+
+      
      
    }
    else if(userData && userData.length > 0) {
@@ -96,7 +99,7 @@ const App = () => {
   <>
       {showSuccess && <SuccessAnimation />}
       {!user ? <Login handleLogin= {handleLogin} /> : ''}
-      {user === 'admin' ? <AdminDashboard /> : ''}
+      {user === 'admin' ? <AdminDashboard data={userData} /> : ''}
       {user === 'employee' ? <EmployeeDashboard data={loggedInUserData}/> : ''} 
     
   </>

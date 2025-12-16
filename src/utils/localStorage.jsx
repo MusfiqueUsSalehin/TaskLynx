@@ -188,7 +188,50 @@ const employees = [
         failed: true
       }
     ]
+  },
+
+
+  {
+    name: "Jiraya",
+    id: 6,
+    email: "employee6@example.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Customer Feedback",
+        description: "Analyze recent feedback from app users.",
+        date: "2025-10-19",
+        category: "Analysis",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false
+      },
+      {
+        title: "Bug Tracking",
+        description: "Log new bugs found during the latest QA session.",
+        date: "2025-10-16",
+        category: "QA",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false
+      },
+      {
+        title: "Content Update",
+        description: "Update landing page texts and banner images.",
+        date: "2025-10-18",
+        category: "Content",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true
+      }
+    ]
   }
+
+
+
 ];
 
 
@@ -207,9 +250,11 @@ employees.forEach(emp => {
 
 const admins = [
   {
-    "id": 1,
-    "email": "admin@example.com",
-    "password": "123"
+    name : "Musfique",
+    id: 1,
+    email: "admin@example.com",
+    password: "123",
+    
   }
 ];
 

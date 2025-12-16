@@ -20,7 +20,7 @@ const NewTask = ({data}) => {
     // Functionality to accept the task can be implemented here
     console.log(`Task "${data.title}" accepted!`);
 
-    const taskData = authdata.userData;
+    const taskData = [...authdata.userData];
 
     taskData.forEach((e) => {
       e.tasks.forEach((task) => {

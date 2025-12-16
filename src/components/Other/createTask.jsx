@@ -54,56 +54,56 @@ const CreateTask = () => {
     setCategory("");  
   }
   return (
-    <div className='w-[50%] h-[85vh] bg-slate-200 p-5 rounded-lg'>
+    <div className='w-[50%] h-[85vh] bg-[#FDF0F6] p-5 rounded-lg mt-4'>
           <form onSubmit={(e) =>
             submitHandler(e)
-          } className='flex flex-col gap-2 w-[100%] bg-slate-300 p-3 rounded-lg mt-4'>
-              <h3>Task Title</h3>
+          } className='flex flex-col gap-2 w-[100%] rounded-lg mt-4'>
+              <h3 className='text-[#771144] font-bold'>Task Title</h3>
               <input 
                value ={taskTitle}
                onChange={(e) => {
                 setTitle(e.target.value)
                }}
-               type="text" placeholder='Give a title' className='bg-black' />
+               type="text" placeholder='Give a title' className='bg-black rounded-lg h-8 p-2 ' />
 
 
-              <h3>Description</h3>
+              <h3 className='text-[#771144] font-bold'>Description</h3>
               <textarea 
               value={taskDesc}
               onChange={(e) => {
                 setDesc(e.target.value)
               }}
-              cols='30' rows='10' className='bg-black'></textarea>
+              cols='30' rows='10' className='bg-black rounded-lg p-2'></textarea>
 
 
-              <h3>Date</h3>
+              <h3 className='text-[#771144] font-bold'>Date</h3>
               <input 
                 value ={taskDate}
                 onChange={(e) => {
                   setDate(e.target.value)
                 }}
-                type="date" className='bg-black' />
+                type="date" className='bg-black rounded-lg h-8 p-2' />
 
 
-              <h3>Assigned to</h3>
+              <h3 className='text-[#771144] font-bold'>Assigned to</h3>
               <input 
                 value ={taskAsign}
                 onChange={(e) => {
                   setAsign(e.target.value)
                 }}
-                type="text" placeholder='Employee name' className='bg-black'/>
+                type="text" placeholder='Employee name' className='bg-black rounded-lg h-8 p-2'/>
 
 
-              <h3>Category</h3>
+              <h3 className='text-[#771144] font-bold'>Category</h3>
               <input 
                 value ={taskCategory}
                 onChange={(e) => {
                   setCategory(e.target.value)
                 }}
-                type="text" placeholder='dev,design' className='bg-black'/>
+                type="text" placeholder='dev,design' className='bg-black rounded-lg h-8 p-2'/>
 
                 
-              <button className='bg-amber-600'>Create Task</button>
+              <button className='bg-green-600 rounded-lg h-10'>Create Task</button>
           </form>
     </div>
   )

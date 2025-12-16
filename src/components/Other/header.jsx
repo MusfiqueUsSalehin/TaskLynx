@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Header = ({data}) => {
+
+  console.log("Header data",data);
   const LogOut = () => {
     localStorage.removeItem ('loggedInUser');
     window.location.reload();}

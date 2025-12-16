@@ -13,7 +13,7 @@ const AcceptTask = ({data}) => {
     // Logic to mark the task as failed
     console.log(`Task "${data.title}" marked as failed.`);
 
-    const taskData = authData.userData;
+    const taskData = [...authData.userData];
 
     taskData.forEach((e) => {
       e.tasks.forEach((task) => {
@@ -35,7 +35,7 @@ const AcceptTask = ({data}) => {
     // Logic to mark the task as completed
     console.log(`Task "${data.title}" marked as completed.`);
 
-    const taskData = authData.userData;
+    const taskData = [...authData.userData];
 
     taskData.forEach((e) => {
       e.tasks.forEach((task) => {
