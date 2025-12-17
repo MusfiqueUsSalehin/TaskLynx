@@ -12,7 +12,7 @@ const AdminDashboard = () => {
 
   console.log();
   return (
-    <div className='h-screen w-full p-8 bg-[#951555]'>
+    <div className='h-screen w-full p-8 bg-[#1B211A]'>
         <Header data={admin}/>
         <div className='flex flex-row gap-10 '>
             <CreateTask/>

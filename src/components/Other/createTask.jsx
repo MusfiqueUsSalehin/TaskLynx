@@ -18,6 +18,8 @@ const CreateTask = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
+    
+
     const newTask = {
     title:taskTitle,
     description:taskDesc,
@@ -28,7 +30,7 @@ const CreateTask = () => {
     completed: false,
     failed: false
     };
-    const data = authData.userData;
+    const data = [...authData.userData];
     console.log(data);
 
 
@@ -54,10 +56,10 @@ const CreateTask = () => {
     setCategory("");  
   }
   return (
-    <div className='w-[50%] h-[85vh] bg-[#FDF0F6] p-5 rounded-lg mt-4'>
+    <div className='w-[50%] h-[85vh] bg-[#FDF0F6] p-5 rounded-lg mt-4  '>
           <form onSubmit={(e) =>
             submitHandler(e)
-          } className='flex flex-col gap-2 w-[100%] rounded-lg mt-4'>
+          } className='flex flex-col gap-2 w-[100%] rounded-lg mt-2'>
               <h3 className='text-[#771144] font-bold'>Task Title</h3>
               <input 
                value ={taskTitle}

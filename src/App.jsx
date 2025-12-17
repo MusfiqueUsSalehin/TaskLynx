@@ -41,7 +41,7 @@ const App = () => {
       setTimeout (() => {
          setUser ('admin');
          setshowSuccess(false);
-      } , 1500);
+      } , 800);
 
       localStorage.setItem('loggedInUser', JSON.stringify({role: 'admin'}));
 
@@ -58,7 +58,7 @@ const App = () => {
             setUser ('employee');
             setLogged (employee);
             setshowSuccess(false);
-         } , 1500);
+         } , 800);
          localStorage.setItem('loggedInUser', JSON.stringify({role: 'employee'}));
       }
 
