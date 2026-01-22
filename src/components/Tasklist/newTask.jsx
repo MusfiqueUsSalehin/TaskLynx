@@ -23,12 +23,21 @@ const NewTask = ({data}) => {
     const taskData = [...authdata.userData];
 
     taskData.forEach((e) => {
+
+      let taskfound = false;
       e.tasks.forEach((task) => {
         if (task.title === data.title && task.date === data.date) {
+          taskfound = true;
           task.active = true;
-          task.newTask = false;
+          task.newTask = false;  
+
         }
       }); 
+
+      if (taskfound) {
+        e.taskCount.active += 1;
+        e.taskCount.newTask -= 1;
+      }
     });
 
     authdata.setUserData(taskData);

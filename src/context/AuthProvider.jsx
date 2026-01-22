@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
         setUserData(employees)
     }, [])
 
-    useEffect(() => {
+    useEffect(() => {  
     if (userData) {
         localStorage.setItem("employees", JSON.stringify(userData));
     }

@@ -16,12 +16,20 @@ const AcceptTask = ({data}) => {
     const taskData = [...authData.userData];
 
     taskData.forEach((e) => {
+
+      let taskfound = false;
       e.tasks.forEach((task) => {
         if (task.title === data.title && task.date === data.date) {
           task.failed = true;
           task.active = false;
+          taskfound = true;
         }
       }); 
+
+      if (taskfound){
+        e.taskCount.failed +=1
+      }
+
     });
 
 
@@ -38,12 +46,19 @@ const AcceptTask = ({data}) => {
     const taskData = [...authData.userData];
 
     taskData.forEach((e) => {
+
+      let taskfound = false
       e.tasks.forEach((task) => {
         if (task.title === data.title && task.date === data.date) {
           task.completed = true;
           task.active = false;
+          taskfound = true
         }
       }); 
+
+      if (taskfound){
+        e.taskCount.completed +=1
+      }
     });
 
     authData.setUserData(taskData);

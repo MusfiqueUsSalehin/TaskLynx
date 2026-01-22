@@ -3,6 +3,7 @@ import Header from '../Other/header'
 import CreateTask from '../Other/createTask'
 import AllTask from '../Other/allTask'
 import { getLocalStorage } from '../../utils/localStorage' 
+import ChatBot from '../Chatbox/chatBot'
 
 const AdminDashboard = () => {
   const admin = getLocalStorage().admins[0];
@@ -18,6 +19,8 @@ const AdminDashboard = () => {
             <CreateTask/>
             <AllTask/>
         </div>
+        
+        <div><ChatBot/></div>
     </div>
   )
 }
